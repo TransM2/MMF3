@@ -1,5 +1,6 @@
 # MMF3
 Code Summarization
+We public the source code and datasets for MMF3.
 ## Requirements
   * Pytorch 1.8.0
   * Python 3.6.5
