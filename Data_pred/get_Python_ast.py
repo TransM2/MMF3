@@ -177,7 +177,7 @@ buf = StringIO()
 n = 0
 error = dict()
 success = []
-with open('parallel_corpus/data_ps.decldesc_1000.test', 'r', encoding='utf-8') as f:
+with open('python_code2.txt', 'r', encoding='utf-8') as f:
     lines = f.readlines()
 # print(lines[0])
 for n,line in enumerate(lines):
@@ -204,17 +204,10 @@ for n,line in enumerate(lines):
         error[n] = line.split()[1]+'....'
     finally:
         global_tree.clear_tree()
-with open('HS_code665/HS_AST_664em.txt', 'w') as f:
+with open('train_ast.txt', 'w') as f:
     f.write(buf.getvalue())
 buf.close()
 print('源文件行数:',len(lines))
 print('解析成功条数:',len(success))
 print('失败程序')
 print(error)
-with open('HS_AST665.txt','r') as f:
-    line = f.readlines()
-n=0
-for i in line:
-    if i.startswith('AST'):
-        n+=1
-print(n)
