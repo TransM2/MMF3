@@ -32,14 +32,14 @@ In Data_pred file, the `get_Java_ast.py` generates ASTs for a Java dataset and `
 
 ## Train-Test
 In Model file, the Trans_multi.py enables training of the model and testing of the trained model, while the other three files are the models for the ablation experiments. Train and test model:<br>
-``python Trans_multi.py<br>
--dataset_code_dir [Path to load the code in the dataset]<br>
--dataset_nl_dir [Path to load the nl in the dataset]<br>
--dataset_AST_dir [Path to AST files]<br>
--AST_num [Number of ASTs]<br>
--save_model_dir [Path to save the trained model]<br>
--save_pred_dir [Path to save prediction result file]<br>
--tar_dir [Path to save the target result file]<br>``
+``python Trans_multi.py <br>
+-dataset_code_dir [Path to load the code in the dataset] <br>
+-dataset_nl_dir [Path to load the nl in the dataset] <br>
+-dataset_AST_dir [Path to AST files] <br>
+-AST_num [Number of ASTs] <br>
+-save_model_dir [Path to save the trained model] <br>
+-save_pred_dir [Path to save prediction result file] <br>
+-tar_dir [Path to save the target result file] <br>``
 
 
 
