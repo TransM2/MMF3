@@ -28,7 +28,9 @@ MMF3 uses source code and ASTs modalities, which uses the [JDK](http://www.eclip
 
 ## Get ASTs
 In Data_pred file, the `get_Java_ast.py` generates ASTs for a Java dataset and `get_python_ast.py` generates ASTs for Python functions. You can run the following command：<br>
-```python3 source.code ast.json```
+```
+python3 source.code ast.json
+```
 
 ## Train-Test
 In Model file, the Trans_multi.py enables training of the model and testing of the trained model, while the other three files are the models for the ablation experiments. Train and test model:<br>
