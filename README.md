@@ -1,5 +1,4 @@
-# MMF3
-Code Summarization
+# MMF3: Neural Code Summarization Based on Multi-Modal Fine-Grained Feature Fusion
 We public the source code and datasets for MMF3.
 
 ## Datasets
@@ -15,6 +14,10 @@ In the MMF3, we use two large-scale datasets for experiments, including one Java
 
 ## Data preprocessing
 MMF3 uses source code and ASTs modalities, which uses the [JDK](http://www.eclipse.org/jdt/) compiler to parse java methods as ASTs, and the [Treelib](https://treelib.readthedocs.io/en/latest/) toolkit to prase Python functions as ASTs. In addition, before embedding ASTs, we use BERT pre-training to embed the information of nodes.
+
+## Get ASTs
+In Data_pred file, the `get_Java_ast.py` generates ASTs for a Java dataset and `get_python_ast.py` generates ASTs for Python functions. You can run the following command：<br>
+
 
 ## Requirements
   * Pytorch 1.8.0
