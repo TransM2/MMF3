@@ -157,6 +157,6 @@ def get_ast(file_name, w):
 
 if __name__ == '__main__':
     # pre-process the source code: strings -> STR_, numbers-> NUM_, Booleans-> BOOL_
-    process_source('JAH_dataset/JAH_code_10000.txt', 'source.code')
+    process_source(sys.argv[1], 'source.code')
     # generate ast file for source code
-    get_ast('source.code', 'JAH_dataset/JAH_AST_10000.txt')
+    get_ast('source.code', sys.argv[2])
