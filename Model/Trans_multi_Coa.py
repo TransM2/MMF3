@@ -25,9 +25,6 @@ from Model.sentences_list.make_data import generate_code_datasets
 from Model.sentences_list.make_data import generate_nl_datasets
 from Model.match.match_tok_AST import match_Tok_AST2
 from GCN_Encoder import GCNEncoder
-# from train_eval import train, evaluate
-# from metrics import nltk_sentence_bleu,meteor_score
-# from rouge import Rouge
 
 
 Device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
