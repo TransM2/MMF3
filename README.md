@@ -1,6 +1,17 @@
 # MMF3: Neural Code Summarization Based on Multi-Modal Fine-Grained Feature Fusion
 We public the source code and datasets for MMF3.
 
+## Requirements
+  * Pytorch 1.8.0
+  * Network 2.3
+  * Numpy 1.19.5
+  * Nltk 3.6.2
+  * Pandas 1.1.5
+  * javalang 0.13.0
+  * treelib 1.6.1
+  * bert-serving-client 1.10.0
+  * bert-serving-server 1.10.0
+
 ## Datasets
 In the MMF3, we use two large-scale datasets for experiments, including one Java and one Python datasets. In data file, we give the two datasets, which obtain from following paper. If you want to train the model, you must download the datasets.
 
@@ -17,15 +28,18 @@ MMF3 uses source code and ASTs modalities, which uses the [JDK](http://www.eclip
 
 ## Get ASTs
 In Data_pred file, the `get_Java_ast.py` generates ASTs for a Java dataset and `get_python_ast.py` generates ASTs for Python functions. You can run the following command：<br>
+`python3 source.code ast.json`
+
+## Train-Test
+In Model file, the Trans_multi.py enables training of the model and testing of the trained model, while the other three files are the models for the ablation experiments. Train and test model:<br>
+`python Trans_multi.py <br>
+-dataset_code_dir [Path to load the code in the dataset] <br>
+-dataset_nl_dir [Path to load the nl in the dataset] <br>
+-dataset_AST_dir [Path to AST files] <br>
+-AST_num [Number of ASTs] <br>
+-save_model_dir [Path to save the trained model] <br>
+-save_pred_dir [Path to save prediction result file] <br>
+-tar_dir [Path to save the target result file] <br>`
 
 
-## Requirements
-  * Pytorch 1.8.0
-  * Python 3.6.5
-  * Network 2.3
-  * Numpy 1.19.5
-  * Nltk 3.6.2
-  * Pandas 1.1.5
-  * Tensorflow 1.15.0
-  * bert-serving-client 1.10.0
-  * bert-serving-server 1.10.0
+
