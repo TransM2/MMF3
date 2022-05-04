@@ -33,7 +33,7 @@ python3 source.code ast.json
 ```
 
 ## Train-Test
-In Model file, the Trans_multi.py enables training of the model and testing of the trained model, while the other three files are the models for the ablation experiments. Train and test model:<br>
+In Model file, the `Trans_multi.py` enables training of the model and testing of the trained model, while the other three files are the models for the ablation experiments. Train and test model:<br>
 ```
 python Trans_multi.py
 -dataset_code_dir [Path to load the code in the dataset]
