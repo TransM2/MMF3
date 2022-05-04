@@ -43,13 +43,13 @@ def meteor_score1(hypothesis, reference):
     return METEOR
 
 pred1 = []
-with open('D:/anaconda/envs/asbleu/nlg-eval-master/examples/code_summary/JAHoutput_gao10000.txt', 'r', encoding='utf-8') as f1:  # ref1
+with open(save_pred_dir, 'r', encoding='utf-8') as f1:  # ref1
     lines = f1.readlines()
     for line in lines:
         pred1.append(line)
 
 ref = []
-with open('D:/anaconda/envs/asbleu/nlg-eval-master/examples/code_summary/JAHoutput_gao10000tar.txt', 'r', encoding='utf-8') as f2:  # ref1
+with open(tar_dir, 'r', encoding='utf-8') as f2:  # ref1
     lines = f2.readlines()
 
     for line in lines:
