@@ -34,14 +34,16 @@ python3 source.code ast.json
 
 ## Train-Test
 In Model file, the Trans_multi.py enables training of the model and testing of the trained model, while the other three files are the models for the ablation experiments. Train and test model:<br>
-```python Trans_multi.py <br>
--dataset_code_dir [Path to load the code in the dataset] <br>
--dataset_nl_dir [Path to load the nl in the dataset] <br>
--dataset_AST_dir [Path to AST files] <br>
--AST_num [Number of ASTs] <br>
--save_model_dir [Path to save the trained model] <br>
--save_pred_dir [Path to save prediction result file] <br>
--tar_dir [Path to save the target result file] <br>```
+```
+python Trans_multi.py
+-dataset_code_dir [Path to load the code in the dataset]
+-dataset_nl_dir [Path to load the nl in the dataset]
+-dataset_AST_dir [Path to AST files]
+-AST_num [Number of ASTs]
+-save_model_dir [Path to save the trained model]
+-save_pred_dir [Path to save prediction result file]
+-tar_dir [Path to save the target result file]
+```
 
 
 
