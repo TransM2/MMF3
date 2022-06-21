@@ -4,30 +4,16 @@ from rouge import Rouge
 import nltk
 # nltk.download('wordnet')
 
-def nltk_sentence_bleu(hypotheses, references, order=4):
+def nltk_corpus_bleu(hypothesis, reference):
+    hyps = []
     refs = []
-    count = 0
-    total_score = 0.0
-    cc = SmoothingFunction()
-    for hyp, ref in zip(hypotheses, references):
+    for hyp, ref in zip(hypothesis, reference):
         hyp = hyp.split()
         ref = ref.split()
+        hyps.append(hyp)
         refs.append([ref])
-        if len(hyp) < order:
-            continue
-        else:
-            score = nltk.translate.bleu([ref], hyp, smoothing_function=cc.method4)
-            total_score += score
-            count += 1
-    S_BLEU = total_score / count
-    # hpy2 = []
-    # for i in hypotheses:
-    #     # print(i)
-    #     i = i.split()
-    #     hpy2.append(i)
-
-    return S_BLEU
-
+    corpus_bleu = nltk.translate.bleu_score.corpus_bleu(refs, hyps, weights=(0.25, 0.25, 0.25, 0.25))
+    return corpus_bleu
 
 def meteor_score1(hypothesis, reference):
     count = 0
@@ -57,10 +43,9 @@ with open(tar_dir, 'r', encoding='utf-8') as f2:  # ref1
         # print(line)
         ref.append(line)
 # print(ref)
-avg_score = nltk_sentence_bleu(pred1, ref)
+avg_score = nltk_corpus_bleu(pred1, ref)
 meteor = meteor_score1(pred1, ref)
-print('S_BLEU: %.4f' % avg_score)
-# print('C-BLEU: %.4f' % corup_BLEU)
+print('BLEU: %.4f' % avg_score)
 print('METEOR: %.4f' % meteor)
 rouge = Rouge()
 rough_score = rouge.get_scores(pred1, ref, avg=True)
